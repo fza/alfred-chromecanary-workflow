@@ -1,7 +1,7 @@
 Open in Google Chrome Canary ([Download v1.0](https://github.com/fza/alfred-chromecanary-workflow/raw/master/chromecanary.alfredworkflow))
 =====================
 
-This is an Alfred 2 workflow to open a URL in Google Chrome Canary. There are many [other solutions](http://support.alfredapp.com/workflows:config:actions-open-url) and some provide way more functionality, but this one works best for me – as simple as it is.
+This is an Alfred 2 workflow to open a URL in Google Chrome Canary. Of course there are [other](http://support.alfredapp.com/workflows:config:actions-open-url) [solutions](http://www.alfredforum.com/topic/538-send-url/?hl=%2Bchrome+%2Bcanary) and some provide way more functionality, but this one works best for me – as simple as it is.
 
 ![canary](./screenshots/alfred-chromecanary.png "Sample Usage")
 
