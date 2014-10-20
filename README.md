@@ -1,4 +1,4 @@
-Open in Google Chrome Canary ([Download v1.0](https://raw.github.com/fza/alfred-chromecanary-workflow/master/chromecanary.alfredworkflow))
+Open in Google Chrome Canary ([Download v1.0](https://github.com/fza/alfred-chromecanary-workflow/raw/master/chromecanary.alfredworkflow))
 =====================
 
 This is an Alfred 2 workflow to open a URL in Google Chrome Canary. There are many [other solutions](http://support.alfredapp.com/workflows:config:actions-open-url) and some provide way more functionality, but this one works best for me – as simple as it is.
