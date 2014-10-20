@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.fza.alfred.chromecanary</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>BF6C8039-DAA5-4B7E-B98E-0CFCE5ACD6E8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>113100AC-8E59-479B-B064-E5C91A757E6C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Felix Zandanel</string>
+	<key>description</key>
+	<string>Open a URL in Google Chrome Canary</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open in Google Chrome Canary</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>canary</string>
+				<key>text</key>
+				<string>Open in Google Chrome Canary</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BF6C8039-DAA5-4B7E-B98E-0CFCE5ACD6E8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string># Uses some routines from http://applescript.bratis-lover.net/library/string/on alfred_script(q)	set q to trimBoth(q)		if findFirst(q, "http") = 1 then		set theURL to q	else		set theURL to "http://" &amp; q	end if		tell application "Google Chrome Canary"		activate				if (count every window) = 0 then
+			make new window
+			set theTab to active tab of window 1		else			set theTab to make new tab at end of tabs of window 1		end if
+
+		set URL of theTab to theURL				activate	end tellend alfred_scripton trimStart(str)	local str, whiteSpace	try		set str to str as string		set whiteSpace to {character id 10, return, space, tab}		try			repeat while str's first character is in whiteSpace				set str to str's text 2 thru -1			end repeat			return str		on error number -1728			return ""		end try	on error eMsg number eNum		error "Can't trimStart: " &amp; eMsg number eNum	end tryend trimStarton trimEnd(str)	local str, whiteSpace	try		set str to str as string		set whiteSpace to {character id 10, return, space, tab}		try			repeat while str's last character is in whiteSpace				set str to str's text 1 thru -2			end repeat			return str		on error number -1728			return ""		end try	on error eMsg number eNum		error "Can't trimEnd: " &amp; eMsg number eNum	end tryend trimEndon trimBoth(str)	local str	try		return my trimStart(my trimEnd(str))	on error eMsg number eNum		error "Can't trimBoth: " &amp; eMsg number eNum	end tryend trimBothon findFirst(str, findString)	local str, findString, len, oldTIDs	set oldTIDs to AppleScript's text item delimiters	try		set str to str as string		set AppleScript's text item delimiters to findString		considering case			set len to str's first text item's length		end considering		set AppleScript's text item delimiters to oldTIDs		if len is str's length then			return 0		else			return len + 1		end if	on error eMsg number eNum		set AppleScript's text item delimiters to oldTIDs		error "Can't findFirst: " &amp; eMsg number eNum	end tryend findFirst</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>113100AC-8E59-479B-B064-E5C91A757E6C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>113100AC-8E59-479B-B064-E5C91A757E6C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BF6C8039-DAA5-4B7E-B98E-0CFCE5ACD6E8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
